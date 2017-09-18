@@ -8,10 +8,9 @@
   </head>
 
   <body>
-    <p>This is the beginning of the body </p>
     <div class="container">
       <div class="jumbotron">
-        <h1>JQuery Events</h1>
+        <h3>showing & hidding elements</h3>
         <button type="button" id="btn1" data-panel="panel1" class="panel-button">#btn1</button>
         <button type="button" id="btn2" data-panel="panel2" class="panel-button">#btn2</button>
         <button type="button" id="btn3" data-panel="panel3" class="panel-button">#btn3</button>
@@ -24,7 +23,7 @@
              #panel1
           </div>
           <div class="panel-body">
-            content
+             #panel1 content
           </div>
         </div>
       </div>
@@ -35,7 +34,7 @@
              #panel2
           </div>
           <div class="panel-body">
-            content
+             #panel2 content
           </div>
         </div>
       </div>
@@ -46,7 +45,7 @@
              #panel3
           </div>
           <div class="panel-body">
-            content
+             #panel3 content
           </div>
         </div>
       </div>
@@ -57,10 +56,18 @@
              #panel4
           </div>
           <div class="panel-body">
-            content
+             #panel4 content
           </div>
         </div>
       </div>
+
+      <div class="page-footer">
+        <button type="button" id="btnHome" link-ref="homeLink" class="link-button">
+            <a href="index.html">Back To Main Page</a>
+        </button>
+      </div>
+
+
   </div>     <!-- container -->
 
 
@@ -70,87 +77,13 @@
 
     <!-- showing & hidding -->
     $(document).ready(function() {
-      $("#panel1").hide(300).show(1000).hide(300).show(1000);
-      $("#panel1").slideUp(1000).delay(1000).slideDown(1000);
-      $("#panel2").fadeOut(500).delay(500).fadeIn(500).fadeToggle(500).fadeToggle(500);
-      $("#panel3").slideToggle(1000).slideToggle(1000).slideToggle(1000).slideToggle(1000);
-      $("#panel4").toggle(1000).toggle(1000).toggle(1000).toggle(1000);
+      $("#panel1").hide(3000).show(3000).hide(3000).show(3000);
+      $("#panel1").slideUp(2000).delay(2000).slideDown(2000);
+      $("#panel2").fadeOut(5000).delay(5000).fadeIn(0500).fadeToggle(5000).fadeToggle(5000);
+      $("#panel3").slideToggle(3000).slideToggle(3000).slideToggle(3000).slideToggle(3000);
+      $("#panel4").toggle(5000).toggle(5000).toggle(5000).toggle(5000);
 
     });
-
-    <!-- css styling -->
-    $(document).ready(function() {
-      $("#panel1").css({
-        color: 'red',
-        fontWeight: 'bold',
-        display: 'none'
-      });
-
-      $("#panel1").hide();
-      $("#panel3").css({
-        opacity: '0.2'
-      }).delay(5000).slideToggle(1000).slideToggle(1000).css({
-        opacity: '1.0'
-      });
-
-    });
-
-    <!-- events -->
-    $(document).ready(function() {
-      $(".btn").html('my button');
-      // $("#panel1").html('my panel <strong>my bold text</strong>');
-    });
-
-
-    // $(document).ready(function() {
-    //   $('#btn1').on('click', function() {
-    //     $('#panel1').fadeToggle(500);
-    //   });
-    //   $('#btn2').on('click', function() {
-    //     $('#panel2').fadeToggle(500);
-    //   });
-    //   $('#btn3').on('click', function() {
-    //     $('#panel3').fadeToggle(500);
-    //   });
-    //   $('#btn4').on('click', function() {
-    //     $('#panel4').fadeToggle(500);
-    //   });
-    //
-    //   $('#btn1').mouseover('click', function() {
-    //     $('#panel1').fadeToggle(500);
-    //   });
-    //   $('#btn2').mouseover('click', function() {
-    //     $('#panel2').fadeToggle(500);
-    //   });
-    //   $('#btn3').mouseover('click', function() {
-    //     $('#panel3').fadeToggle(500);
-    //   });
-    //   $('#btn4').mouseover('click', function() {
-    //     $('#panel4').fadeToggle(500);
-    //   });
-    // });
-
-
-
-  // D R Y
-    $(document).ready(function() {
-      var content = "My New Awesome Content";
-        console.log("B4 button click");
-
-      $('button').on('click', function() {
-        var panelId = $(this).attr("data-panel");
-      console.log("Id of panel clicked: " + panelId);
-      alert(panelId);
-      $('#' + panelId).toggle(500);
-      $('#' + panelId + ' .panel-body').html(content);
-
-
-
-      });
-
-
-    });
-
 
 
 
